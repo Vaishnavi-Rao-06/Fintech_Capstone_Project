@@ -14,7 +14,7 @@ for name, code in schemes.items():
         data = response.json()
         
         df = pd.DataFrame(data["data"])
-        df.to_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/{name}_nac.csv",index=False)
+        df.to_csv(f"C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/{name}_nac.csv",index=False)
         
         print(f"Done. {name} - {len(df)} rows saved.")
         
