@@ -1,0 +1,31 @@
+
+========== DATA QUALITY REPORT ==========
+Fund Master   : 40 unique AMFI codes
+NAV History   : 40 unique AMFI codes
+
+Matched     : 40
+Missing     : 0 (in fund_master but NOT in nav_history)
+Extra       : 0 (in nav_history but NOT in fund_master)
+
+NAV History null check:
+amfi_code    0
+date         0
+nav          0
+
+Fund Master null check:
+amfi_code             0
+fund_house            0
+scheme_name           0
+category              0
+sub_category          0
+plan                  0
+launch_date           0
+benchmark             0
+expense_ratio_pct     0
+exit_load_pct         0
+min_sip_amount        0
+min_lumpsum_amount    0
+fund_manager          0
+risk_category         0
+sebi_category_code    0
+==========================================
