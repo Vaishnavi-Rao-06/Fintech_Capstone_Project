@@ -108,3 +108,16 @@ Open `dashboard/bluestock_mf_dashboard.pbix` in Power BI Desktop.
 ## Author:
 
 **Vaishnavi Rao**
+
+## 🎁 Bonus Challenges Completed (+50 marks)
+
+| # | Challenge | Deliverable |
+|---|-----------|-------------|
+| B1 | Scheduled ETL (Windows Task Scheduler) | `reports/B1_cron_setup.md` |
+| B2 | Streamlit Web App (alternative to Power BI) | `dashboard/app.py` — run with `streamlit run app.py` |
+| B3 | Monte Carlo NAV Simulation (5yr projection) | `data/processed/monte_carlo_results.csv`, `reports/charts/monte_carlo_simulation.png` |
+| B4 | Markowitz Efficient Frontier | `data/processed/efficient_frontier_portfolios.csv`, `reports/charts/efficient_frontier.png` |
+| B5 | Automated HTML Email Report | `scripts/email_report.py`, `reports/weekly_email_report.html` |
+
+All bonus analyses are documented in `notebooks/05_advanced_analytics.ipynb` 
+and `notebooks/06_monte_carlo_simulation.ipynb`.
