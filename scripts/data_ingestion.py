@@ -1,50 +1,36 @@
+"""
+data_ingestion.py
+
+Loads all 10 raw CSV datasets and prints shape, dtypes, and head() 
+for each — used for initial data exploration during Day 1.
+
+Input: 10 CSV files in data/raw/
+Output: Printed summaries (shape, dtypes, head) for each dataset
+"""
+
 import pandas as pd
-dataset_1 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/01_fund_master.csv")
-print(dataset_1.head())
-print(dataset_1.shape)
-print(dataset_1.dtypes)
+from pathlib import Path
 
-dataset_2 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/02_nav_history.csv")
-print(dataset_2.head())
-print(dataset_2.shape)
-print(dataset_2.dtypes)
+RAW_DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 
-dataset_3 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/03_aum_by_fund_house.csv")
-print(dataset_3.head())
-print(dataset_3.shape)
-print(dataset_3.dtypes)
+datasets = {
+    "Fund Master": "01_fund_master.csv",
+    "NAV History": "02_nav_history.csv",
+    "AUM by Fund House": "03_aum_by_fund_house.csv",
+    "Monthly SIP Inflows": "04_monthly_sip_inflows.csv",
+    "Category Inflows": "05_category_inflows.csv",
+    "Industry Folio Count": "06_industry_folio_count.csv",
+    "Scheme Performance": "07_scheme_performance.csv",
+    "Investor Transactions": "08_investor_transactions.csv",
+    "Portfolio Holdings": "09_portfolio_holdings.csv",
+    "Benchmark Indices": "10_benchmark_indices.csv",
+}
 
-dataset_4 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/04_monthly_sip_inflows.csv")
-print(dataset_4.head())
-print(dataset_4.shape)
-print(dataset_4.dtypes)
-
-dataset_5 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/05_category_inflows.csv")
-print(dataset_5.head())
-print(dataset_5.shape)
-print(dataset_5.dtypes)
-
-dataset_6 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/06_industry_folio_count.csv")
-print(dataset_6.head())
-print(dataset_6.shape)
-print(dataset_6.dtypes)
-
-dataset_7 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/07_scheme_performance.csv")
-print(dataset_7.head())
-print(dataset_7.shape)
-print(dataset_7.dtypes)
-
-dataset_8 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/08_investor_transactions.csv")
-print(dataset_8.head())
-print(dataset_8.shape)
-print(dataset_8.dtypes)
-
-dataset_9 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/09_portfolio_holdings.csv")
-print(dataset_9.head())
-print(dataset_9.shape)
-print(dataset_9.dtypes)
-
-dataset_10 = pd.read_csv("C:/Users/vaishnavi/Downloads/Fintech_Capstone_Project/data/raw/10_benchmark_indices.csv")
-print(dataset_10.head())
-print(dataset_10.shape)
-print(dataset_10.dtypes)
+for name, filename in datasets.items():
+    df = pd.read_csv(RAW_DATA_DIR / filename)
+    print(f"\n{'='*50}")
+    print(f"{name} ({filename})")
+    print('='*50)
+    print(df.head())
+    print(f"Shape: {df.shape}")
+    print(f"Dtypes:\n{df.dtypes}")

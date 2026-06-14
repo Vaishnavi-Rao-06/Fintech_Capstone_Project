@@ -1,3 +1,15 @@
+"""
+live_nav_fetch.py
+
+Fetches live NAV (Net Asset Value) data for HDFC Top 100 Direct Plan 
+(AMFI code: 125497) from the mfapi.in REST API.
+
+Parses the JSON response and saves the NAV history as a raw CSV file 
+in data/raw/hdfc_top100_nav.csv.
+
+Input: None (API call)
+Output: data/raw/hdfc_top100_nav.csv
+"""
 
 import requests
 import pandas as pd
