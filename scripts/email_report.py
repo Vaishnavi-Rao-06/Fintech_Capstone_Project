@@ -51,7 +51,7 @@ html = f"""
 </head>
 <body>
 <div class="container">
-    <h1>📊 Bluestock MF Weekly Report</h1>
+    <h1>Bluestock MF Weekly Report</h1>
     <p>Week of {datetime.now().strftime('%B %d, %Y')}</p>
     
     <h2>Key Metrics</h2>
@@ -64,7 +64,7 @@ html = f"""
         <div>New SIP Accounts</div>
     </div>
     
-    <h2>🏆 Top 5 Funds (Composite Score)</h2>
+    <h2> Top 5 Funds (Composite Score)</h2>
     <table>
         <tr><th>Scheme</th><th>Fund House</th><th>3yr CAGR</th><th>Sharpe</th><th>Score</th></tr>
 """
@@ -83,7 +83,7 @@ for _, row in top5.iterrows():
 html += """
     </table>
     
-    <h2>📈 Top 3 Gainers (1yr Return)</h2>
+    <h2>Top 3 Gainers (1yr Return)</h2>
     <table>
         <tr><th>Scheme</th><th>Fund House</th><th>1yr Return</th></tr>
 """
@@ -111,10 +111,10 @@ html += """
 
 # Save HTML
 output_path = REPORTS_DIR / "weekly_email_report.html"
-with open(output_path, "w") as f:
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(html)
 
-print(f"✅ HTML report saved to {output_path}")
+print(f"HTML report saved to {output_path}")
 
 # ============================================
 # TO ACTUALLY SEND VIA EMAIL (uncomment & configure):
